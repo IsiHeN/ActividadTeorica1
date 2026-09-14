@@ -1,0 +1,296 @@
+/* --- Variables y Configuración Básica --- */
+:root {
+    --verde-oscuro: #2e7d32;
+    --verde-claro: #4caf50;
+    --verde-fondo: #e8f5e9;
+    --blanco: #ffffff;
+    --gris-texto: #333333;
+    --borde-tarjeta: #1976d2; /* Borde azul notorio solicitado */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--verde-fondo);
+    color: var(--gris-texto);
+    line-height: 1.6;
+}
+
+/* --- Barra de Navegación --- */
+header {
+    background-color: var(--verde-oscuro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c8e6c9;
+}
+
+/* --- Secciones Generales --- */
+section {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    color: var(--verde-oscuro);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* --- Lógica de Filtro SIN JavaScript (CSS Hack) --- */
+/* Ocultamos los botones de radio físicos */
+input[type="radio"] {
+    display: none;
+}
+
+.controles-filtro {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-filtro {
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--verde-oscuro);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover {
+    background-color: #c8e6c9;
+}
+
+/* Cuando un radio está seleccionado, cambiamos el estilo de su etiqueta (botón) correspondiente */
+#radio-interior:checked ~ .controles-filtro label[for="radio-interior"],
+#radio-exterior:checked ~ .controles-filtro label[for="radio-exterior"] {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+/* Lógica de visualización de los grupos */
+.grupo-plantas {
+    display: none; /* Oculto por defecto */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+#radio-interior:checked ~ .contenedor-galeria .interior {
+    display: grid;
+}
+
+#radio-exterior:checked ~ .contenedor-galeria .exterior {
+    display: grid;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Tarjetas de Plantas (Cards) --- */
+.card-planta {
+    background-color: var(--blanco);
+    border: 4px solid var(--borde-tarjeta); /* Borde perimetral notorio */
+    padding: 20px; /* Relleno interno */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-planta:hover {
+    transform: scale(1.02);
+}
+
+.card-planta h3 {
+    color: var(--verde-oscuro);
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.card-planta img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #eee; /* Fondo temporal en caso de no cargar la imagen */
+}
+
+.card-planta .btn-info {
+    margin-top: auto; /* Empuja el botón al fondo si la tarjeta crece */
+    background-color: var(--verde-claro);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.card-planta .btn-info:hover {
+    background-color: var(--verde-oscuro);
+}
+
+/* --- Sección Sobre Mí --- */
+.seccion-sobremi {
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-texto {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- Sección Contacto --- */
+.contenedor-formulario {
+    background-color: var(--blanco);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contenedor-formulario p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grupo-input label {
+    font-weight: bold;
+    color: var(--verde-oscuro);
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: var(--verde-claro);
+    outline: none;
+}
+
+.btn-enviar {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: var(--verde-claro);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* --- Media Queries (Responsivo) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .controles-filtro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-filtro {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}

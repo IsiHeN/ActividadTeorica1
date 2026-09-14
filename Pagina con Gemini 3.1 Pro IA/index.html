@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín Botánico - Plantas</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Mi Jardín</div>
+            <ul class="nav-links">
+                <li><a href="#plantas">Plantas</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Plantas -->
+        <section id="plantas" class="seccion-plantas">
+            <h2>Catálogo de Plantas</h2>
+            
+            <!-- Radios ocultos para controlar la interacción sin JS -->
+            <input type="radio" name="filtro-planta" id="radio-interior" checked>
+            <input type="radio" name="filtro-planta" id="radio-exterior">
+
+            <!-- Etiquetas que actúan como botones para los radios -->
+            <div class="controles-filtro">
+                <label for="radio-interior" class="btn-filtro">Plantas de Interior</label>
+                <label for="radio-exterior" class="btn-filtro">Plantas de Exterior</label>
+            </div>
+
+            <!-- Contenedor principal de las plantas -->
+            <div class="contenedor-galeria">
+                
+                <!-- Grupo Interior -->
+                <div class="grupo-plantas interior">
+                    <div class="card-planta">
+                        <h3>Monstera Deliciosa</h3>
+                        <img src="imágenes/monstera.jpg" alt="Monstera Deliciosa">
+                        <a href="info/monstera.pdf" class="btn-info">+ Info</a>
+                    </div>
+                    <div class="card-planta">
+                        <h3>Sansevieria</h3>
+                        <img src="imágenes/sansevieria.jpg" alt="Sansevieria">
+                        <a href="info/sansevieria.pdf" class="btn-info">+ Info</a>
+                    </div>
+                    <div class="card-planta">
+                        <h3>Poto (Epipremnum)</h3>
+                        <img src="imágenes/poto.jpg" alt="Poto">
+                        <a href="info/poto.pdf" class="btn-info">+ Info</a>
+                    </div>
+                </div>
+
+                <!-- Grupo Exterior -->
+                <div class="grupo-plantas exterior">
+                    <div class="card-planta">
+                        <h3>Rosal Clásico</h3>
+                        <img src="imágenes/rosal.jpg" alt="Rosal Clásico">
+                        <a href="info/rosal.pdf" class="btn-info">+ Info</a>
+                    </div>
+                    <div class="card-planta">
+                        <h3>Lavanda</h3>
+                        <img src="imágenes/lavanda.jpg" alt="Lavanda">
+                        <a href="info/lavanda.pdf" class="btn-info">+ Info</a>
+                    </div>
+                    <div class="card-planta">
+                        <h3>Jazmín Enredadera</h3>
+                        <img src="imágenes/jazmin.jpg" alt="Jazmín">
+                        <a href="info/jazmin.pdf" class="btn-info">+ Info</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi" class="seccion-sobremi">
+            <div class="contenedor-texto">
+                <h2>Sobre mí</h2>
+                <p>¡Hola! Soy un apasionado botánico aficionado con más de 10 años de experiencia cultivando espacios verdes urbanos. Mi misión es ayudar a las personas a conectar con la naturaleza, sin importar el tamaño de su hogar. Este sitio web recopila mis plantas favoritas, consejos para su cuidado y recomendaciones para crear tu propio oasis doméstico.</p>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="seccion-contacto">
+            <div class="contenedor-formulario">
+                <h2>Contacto</h2>
+                <p>¿Tienes dudas sobre alguna planta? ¡Escríbeme!</p>
+                <form action="#" class="formulario">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu consulta aquí..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi Jardín Botánico. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
