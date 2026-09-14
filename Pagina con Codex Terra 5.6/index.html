@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guia de plantas de jardin para interior y exterior.">
+  <title>Verde Hogar | Plantas de jardin</title>
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor cabecera-contenido">
+      <a class="marca" href="#inicio">Verde Hogar</a>
+      <nav class="navegacion" aria-label="Navegacion principal">
+        <a href="#plantas">Plantas</a><a href="#sobre-mi">Sobre mi</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="contenedor">
+        <p class="etiqueta">JARDINERIA SIMPLE</p>
+        <h1>Plantas para hacer florecer cada espacio.</h1>
+        <p>Una seleccion de especies de interior y exterior para sumar naturaleza a tu hogar.</p>
+        <a class="boton" href="#plantas">Explorar plantas</a>
+      </div>
+    </section>
+    <section id="plantas" class="seccion plantas">
+      <div class="contenedor">
+        <div class="titulo-seccion"><p class="etiqueta">COLECCION</p><h2>Plantas</h2><p>Elegi una categoria para descubrir sus especies.</p></div>
+        <!-- Los radios y sus etiquetas permiten filtrar sin JavaScript. -->
+        <div class="selector-categorias">
+          <input type="radio" name="categoria" id="interior" checked>
+          <label for="interior">Interior</label>
+          <input type="radio" name="categoria" id="exterior">
+          <label for="exterior">Exterior</label>
+          <div class="plantas-contenido">
+            <section class="grupo grupo-interior" aria-labelledby="titulo-interior">
+              <h3 id="titulo-interior">Plantas de interior</h3>
+              <div class="grid-plantas">
+                <article class="tarjeta"><h4>Monstera deliciosa</h4><img src="imágenes/monstera.jpg" alt="Hojas verdes de una Monstera deliciosa"><a href="info/monstera.pdf" target="_blank">+ Info</a></article>
+                <article class="tarjeta"><h4>Sansevieria</h4><img src="imágenes/sansevieria.jpg" alt="Planta Sansevieria de hojas verticales"><a href="info/sansevieria.pdf" target="_blank">+ Info</a></article>
+                <article class="tarjeta"><h4>Potus</h4><img src="imágenes/potus.jpg" alt="Hojas verdes de una planta Potus"><a href="info/potus.pdf" target="_blank">+ Info</a></article>
+              </div>
+            </section>
+            <section class="grupo grupo-exterior" aria-labelledby="titulo-exterior">
+              <h3 id="titulo-exterior">Plantas de exterior</h3>
+              <div class="grid-plantas">
+                <article class="tarjeta"><h4>Lavanda</h4><img src="imágenes/lavanda.jpg" alt="Flores violetas de lavanda"><a href="info/lavanda.pdf" target="_blank">+ Info</a></article>
+                <article class="tarjeta"><h4>Rosal</h4><img src="imágenes/rosal.jpg" alt="Rosas en un rosal de jardin"><a href="info/rosal.pdf" target="_blank">+ Info</a></article>
+                <article class="tarjeta"><h4>Helecho</h4><img src="imágenes/helecho.jpg" alt="Frondas verdes de un helecho"><a href="info/helecho.pdf" target="_blank">+ Info</a></article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sobre-mi" class="seccion sobre-mi">
+      <div class="contenedor texto-centrado"><p class="etiqueta">SOBRE MI</p><h2>Una guia creada con amor por lo verde.</h2><p>Soy Isidro, aficionado a la jardineria urbana. Mantengo este sitio para compartir especies nobles, faciles de conocer y consejos que ayudan a disfrutarlas todos los dias.</p></div>
+    </section>
+    <section id="contacto" class="seccion contacto">
+      <div class="contenedor formulario-contenedor">
+        <div><p class="etiqueta">CONTACTO</p><h2>Hablemos de plantas.</h2><p>Dejame tu consulta y te respondere pronto.</p></div>
+        <form action="#contacto" method="post">
+          <label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><p>© 2026 Verde Hogar</p></footer>
+</body>
+</html>
